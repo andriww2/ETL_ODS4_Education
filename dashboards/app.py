@@ -14,33 +14,12 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for Premium Visuals
+# Custom CSS for App Container
 st.markdown("""
 <style>
     .main {
         background-color: #0f172a;
         color: #f8fafc;
-    }
-    .stMetric {
-        background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-        padding: 18px;
-        border-radius: 12px;
-        border: 1px solid #475569;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    }
-    [data-testid="stMetricLabel"], [data-testid="stMetricLabel"] p, label, .stMetric label {
-        color: #ffffff !important;
-        font-size: 1.0rem !important;
-        font-weight: 700 !important;
-    }
-    [data-testid="stMetricValue"], [data-testid="stMetricValue"] div, .stMetric div, .stMetric .metric-value {
-        color: #ffffff !important;
-        font-size: 1.9rem !important;
-        font-weight: 800 !important;
-    }
-    h1, h2, h3, h4, span, label, p {
-        color: #ffffff !important;
-        font-family: 'Inter', sans-serif;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -96,10 +75,18 @@ avg_sdg4 = round(df["sdg4_index_score"].mean(), 1)
 avg_literacy = round(df["literacy_rate_youth"].mean(), 1)
 avg_spending = round(df["govt_expenditure_education_pct_gdp"].mean(), 2)
 
-col1.metric("Tracked Countries", f"{total_countries} Nations")
-col2.metric("Avg SDG 4 Index Score", f"{avg_sdg4} / 100")
-col3.metric("Youth Literacy Rate", f"{avg_literacy}%")
-col4.metric("Govt Education Spend", f"{avg_spending}% GDP")
+def render_kpi(title, value):
+    return f"""
+    <div style="background-color: #1e293b; padding: 16px 20px; border-radius: 10px; border: 1px solid #334155; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+        <div style="color: #ffffff !important; font-size: 0.95rem; font-weight: 600; margin-bottom: 6px;">{title}</div>
+        <div style="color: #ffffff !important; font-size: 1.8rem; font-weight: 800;">{value}</div>
+    </div>
+    """
+
+col1.markdown(render_kpi("Tracked Countries", f"{total_countries} Nations"), unsafe_allow_html=True)
+col2.markdown(render_kpi("Avg SDG 4 Index Score", f"{avg_sdg4} / 100"), unsafe_allow_html=True)
+col3.markdown(render_kpi("Youth Literacy Rate", f"{avg_literacy}%"), unsafe_allow_html=True)
+col4.markdown(render_kpi("Govt Education Spend", f"{avg_spending}% GDP"), unsafe_allow_html=True)
 
 st.markdown("---")
 
