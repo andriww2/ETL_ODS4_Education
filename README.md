@@ -1,4 +1,4 @@
-# 🎓 UN SDG 4: Quality Education — ETL Pipeline & Data Warehouse
+#  UN SDG 4: Quality Education — ETL Pipeline & Data Warehouse
 
 [![Python 3.10](https://img.shields.io/badge/Python-3.10-blue.svg)](https://www.python.org/)
 [![Database](https://img.shields.io/badge/Database-SQLite3-green.svg)](https://sqlite.org/)
@@ -12,7 +12,7 @@
 
 ---
 
-## 📌 Executive Summary
+##  Executive Summary
 
 This project delivers an end-to-end Data Engineering ETL (Extract, Transform, Load) pipeline and Data Warehouse architecture aligned with **UN Sustainable Development Goal 4 (SDG 4: Quality Education)**. 
 
@@ -20,7 +20,7 @@ The dataset contains **20,475 rows** and **19 variables** spanning **195 countri
 
 ---
 
-## 🛠️ Technology Stack & Justification
+##  Technology Stack & Justification
 
 - **Programming Language**: Python 3.10
 - **Database / Storage**: SQLite3 (Relational Data Warehouse using Star Schema architecture)
@@ -32,7 +32,7 @@ The dataset contains **20,475 rows** and **19 variables** spanning **195 countri
 
 ---
 
-## 📁 Project Folder Structure
+##  Project Folder Structure
 
 ```
 ETL_ODS4_Education/
@@ -62,7 +62,7 @@ ETL_ODS4_Education/
 
 ---
 
-## 🏗️ Data Architecture (Star Schema)
+##  Data Architecture (Star Schema)
 
 The database `data/processed/ods4_education.db` is organized into a **Star Schema Data Warehouse**:
 
@@ -74,7 +74,7 @@ The database `data/processed/ods4_education.db` is organized into a **Star Schem
 
 ---
 
-## 🚀 Quickstart & Execution Guide
+##  Quickstart & Execution Guide
 
 ### 1. Prerequisites & Installation
 
@@ -129,7 +129,7 @@ jupyter notebook notebooks/01_eda_and_sql_analysis.ipynb
 
 ---
 
-## 🎯 Evaluation Criteria Matrix (Course Rubric Compliance)
+##  Evaluation Criteria Matrix (Course Rubric Compliance)
 
 | Evaluation Item | Requirement | Project Implementation | Compliance Weight |
 | :--- | :--- | :--- | :---: |
