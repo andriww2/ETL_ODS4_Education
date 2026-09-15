@@ -78,8 +78,8 @@ avg_spending = round(df["govt_expenditure_education_pct_gdp"].mean(), 2)
 def render_kpi(title, value):
     return f"""
     <div style="background-color: #1e293b; padding: 16px 20px; border-radius: 10px; border: 1px solid #334155; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
-        <div style="color: #ffffff !important; font-size: 0.95rem; font-weight: 600; margin-bottom: 6px;">{title}</div>
-        <div style="color: #ffffff !important; font-size: 1.8rem; font-weight: 800;">{value}</div>
+        <p style="color: white; font-size: 0.95rem; font-weight: 600; margin: 0 0 6px 0;">{title}</p>
+        <p style="color: white; font-size: 1.8rem; font-weight: 800; margin: 0;">{value}</p>
     </div>
     """
 
